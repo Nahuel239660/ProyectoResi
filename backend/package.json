@@ -1,0 +1,37 @@
+{
+  "name": "onboarding-nahuel",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'tsc && node dist/index.js'",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "devDependencies": {
+    "@graphql-tools/utils": "^10.5.4",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^22.5.2",
+    "@types/passport": "^1.0.16",
+    "@types/passport-jwt": "^4.0.1",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2",
+    "vite": "^5.1.6"
+  },
+  "dependencies": {
+    "@apollo/server": "4.11",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-resolvers": "^4.2.1",
+    "@graphql-tools/utils": "^10.5.4",
+    "accesscontrol": "^2.2.1",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
+  }
+}

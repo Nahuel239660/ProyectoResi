@@ -1,0 +1,33 @@
+{
+  "name": "trainne",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "format": "prettier --write \"./backend/src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" \"./frontend/src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint": "eslint 'frontend/src/**/*.{js,jsx,ts,tsx}' 'backend/src/**/*.{js,ts}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.11.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "5.5.2",
+    "typescript-eslint": "^8.24.1"
+  },
+  "dependencies": {
+    "react-helmet-async": "^2.0.5"
+  }
+}
