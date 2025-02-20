@@ -1,0 +1,6 @@
+fragment NewArtist on Artist {
+    id
+    name
+    bio
+    profileUrl
+}

@@ -1,0 +1,35 @@
+query GetSongs($artist: ID, $sort: String) {
+    getSongs(artist: $artist, sort: $sort) {
+        id
+        name
+        year
+        artist {
+            id
+            name
+        }
+    }
+}
+
+query GetAllSongs($artist: ID!) {
+    getSongs(artist: $artist) {
+        id
+        name
+        year
+        artist {
+            name
+        }
+    }
+}
+
+query GetSongsComplete($artist: ID!) {
+    getSongs(artist: $artist) {
+        id
+        name
+        year
+        artist {
+            id
+            name
+        }
+    }
+}
+

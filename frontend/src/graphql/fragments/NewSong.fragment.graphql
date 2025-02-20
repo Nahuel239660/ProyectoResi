@@ -1,0 +1,12 @@
+# src/graphql/fragments/NewSong.fragment.graphql
+fragment NewSong on Song {
+    id
+    name
+    artist {
+        id
+        name
+    }
+    albumName
+    year
+    coverArtUrl
+}

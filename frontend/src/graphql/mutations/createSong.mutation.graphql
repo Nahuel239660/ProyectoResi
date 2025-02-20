@@ -1,0 +1,6 @@
+# src/graphql/mutations/createSong.mutation.graphql
+mutation CreateSong($input: SongInput!) {
+    createSong(input: $input) {
+        ...NewSong
+    }
+}

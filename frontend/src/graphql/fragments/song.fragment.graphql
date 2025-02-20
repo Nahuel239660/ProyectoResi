@@ -1,0 +1,6 @@
+# song.fragment.graphql
+fragment NewSong on Song {
+    id
+    name
+    year
+}
