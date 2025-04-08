@@ -22,10 +22,16 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "globals": "^15.11.0",
     "husky": "^8.0.0",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.3.3",
     "typescript": "5.5.2",
     "typescript-eslint": "^8.24.1"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "react-helmet-async": "^2.0.5"

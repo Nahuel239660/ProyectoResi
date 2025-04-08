@@ -1,15 +1,14 @@
 query GetAllArtists {
-    getAllArtists {
-        id
-        name
-        bio
-    }
+  getAllArtists {
+    id
+    name
+    bio
+  }
 }
 
 query GetArtist($id: ID!) {
-    getArtist(id: $id) {
-        id
-        name
-
-    }
+  getArtist(id: $id) {
+    id
+    name
+  }
 }
