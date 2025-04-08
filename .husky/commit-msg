@@ -1,32 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-BRANCH_NAME=$(git symbolic-ref --short HEAD)
-TICKET_ID=$(echo "$BRANCH_NAME" | grep -oE "sc-[0-9]+")
-COMMIT_MSG_FILE=$1
-COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+BRANCH_NAME=$(git symbolic-ref --short HEAD | tr -d '\n' | tr -d ' ')
+echo "🪵 DEBUG: Branch is '$BRANCH_NAME'"
 
-# No validar en main o develop
 if [ "$BRANCH_NAME" = "main" ] || [ "$BRANCH_NAME" = "develop" ]; then
   echo "🔓 Commit libre en rama $BRANCH_NAME"
   exit 0
 fi
 
-# Tipos permitidos
-VALID_TYPES="feat|fix|chore|ref"
-
-# Validar formato tipo: [sc-123]
-echo "$COMMIT_MSG" | grep -E "^($VALID_TYPES): \[$TICKET_ID\]" > /dev/null
-
-if [ $? -ne 0 ]; then
-  echo ""
-  echo "❌ Commit inválido en rama '$BRANCH_NAME'"
-  echo "Debe comenzar con uno de estos tipos: feat:, fix:, chore:, ref:"
-  echo "Y contener el ID de la rama entre corchetes: [$TICKET_ID]"
-  echo ""
-  echo "Ejemplo: feat: [$TICKET_ID] agrega validación de email"
-  exit 1
-fi
-
-echo "✅ Commit válido con tipo y ticket [$TICKET_ID]"
-exit 0
+npx commitlint --edit "$1"
