@@ -1,6 +1,6 @@
 # src/graphql/mutations/createArtist.graphql
 mutation CreateArtist($name: String!, $profileUrl: String, $bio: String) {
-    createArtist(name: $name, profileUrl: $profileUrl, bio: $bio) {
-       ...NewArtist
-    }
+  createArtist(name: $name, profileUrl: $profileUrl, bio: $bio) {
+    ...NewArtist
+  }
 }
